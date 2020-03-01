@@ -2,8 +2,12 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
     "title": "Meta schema",
-    "required": [ "title", "lastUpdated", "files" ],
+    "required": [ "id", "title", "lastUpdated", "files" ],
     "properties": {
+        "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_-]*[a-z0-9]$"
+        },
         "title": {
             "type": "string"
         },

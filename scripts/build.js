@@ -6,8 +6,10 @@ const glob = require('fast-glob');
 const Ajv = require('ajv');
 const debug = require('debug')('build');
 const schema = require('../data/schema.json');
+const { homepage } = require('../package.json');
 
 const rootDir = path.resolve(__dirname, '..');
+const rootUrl = homepage.replace(/\/+$/, '') + '/';
 
 function isMetaJson(filepath) {
     if ( path.basename(filepath) !== 'meta.json' ) return false;
@@ -20,7 +22,7 @@ function loadJson(jsonPath) {
     const entryDir  = path.dirname(resolvedPath);
 
     for (const file of json.files) {
-        file.filename = path.relative(rootDir, path.resolve(entryDir, file.filename));
+        file.url = new URL(path.relative(rootDir, path.resolve(entryDir, file.filename)), rootUrl);
     }
 
     return json;
@@ -39,13 +41,13 @@ async function build() {
         _: '### Do not modify this file directly! ###',
         title: 'Korean public data',
         lastUpdated: new Date('1970-01-01'),
-        entries: [],
+        entries: {},
     };
 
     for (const entry of entries) {
         const lastUpdated = new Date(Date.parse(entry.lastUpdated));
 
-        json.entries.push(entry);
+        json.entries[ entry.id ] = entry;
 
         if ( json.lastUpdated.getTime() < lastUpdated.getTime() ) {
             json.lastUpdated = lastUpdated;
