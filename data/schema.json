@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "Meta schema",
+    "required": [ "title", "lastUpdated", "files" ],
+    "properties": {
+        "title": {
+            "type": "string"
+        },
+        "org": {
+            "type": "string"
+        },
+        "lastUpdated": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "files": {
+            "type": "array",
+            "title": "File list",
+            "items": {
+                "type": "object",
+                "required": [ "type", "filename" ],
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "enum": [ "csv", "json", "xml", "yml" ]
+                    },
+                    "filename": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

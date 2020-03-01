@@ -1,0 +1,18 @@
+{
+  "_": "### Do not modify this file directly! ###",
+  "title": "Korean public data",
+  "lastUpdated": "2020-02-20T15:00:00.000Z",
+  "entries": [
+    {
+      "title": "외래어 표기 용례 정보 통합 파일",
+      "org": "국립국어원",
+      "lastUpdated": "2020-02-21T00:00:00+09:00",
+      "files": [
+        {
+          "type": "csv",
+          "filename": "data/konorms/konorms_20200221.csv"
+        }
+      ]
+    }
+  ]
+}
