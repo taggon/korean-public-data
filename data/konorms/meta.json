@@ -2,11 +2,11 @@
 	"id": "konorms",
 	"title" : "외래어 표기 용례 정보 통합 파일",
 	"org" : "국립국어원",
-	"lastUpdated" : "2020-02-21T00:00:00+09:00",
+	"lastUpdated" : "2020-05-04T00:00:00+09:00",
 	"files": [
 		{
 			"type": "csv",
-			"filename": "konorms_20200221.csv"
+			"filename": "konorms_20200504.csv"
 		}
 	]
 }
