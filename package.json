@@ -16,7 +16,7 @@
 		"build"
 	],
 	"devDependencies": {
-		"ajv": "^6.12.0",
+		"ajv": "^6.12.3",
 		"debug": "^4.1.1",
 		"fast-glob": "^3.2.2",
 		"pre-commit": "^1.2.2",
